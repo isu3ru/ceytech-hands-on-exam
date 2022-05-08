@@ -2,7 +2,7 @@
 
 namespace App\Helpers;
 
-class Config
+class ConfigHelper
 {
     private $generalConfig;
     private $databaseConfig;

@@ -2,14 +2,13 @@
 
 namespace App\Controllers;
 
+use App\Helpers\ViewHelper;
+
 class SiteController
 {
-    public function __construct()
-    {
-    }
-
     public function index()
     {
-        require_once VIEWS_PATH . '/web/home.php';
+        $title = 'Home Page';
+        ViewHelper::render('web/home', compact('title'));
     }
 }

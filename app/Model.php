@@ -2,7 +2,7 @@
 
 namespace App;
 
-use App\Helpers\Config;
+use App\Helpers\ConfigHelper;
 
 class Model
 {
@@ -12,7 +12,7 @@ class Model
 
     public function __construct()
     {
-        $config = new Config();
+        $config = new ConfigHelper();
 
         $this->connection = new \PDO(
             'mysql:host=' . $config->config('host') . ';dbname=' . $config('database'),
