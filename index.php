@@ -1,14 +1,13 @@
 <?php
 
-include __DIR__ . '/boot.php';
+include __DIR__ . '/bootstrap/app.php';
+include __DIR__ . '/bootstrap/bootstrap.php';
 
-$requestPath = $_SERVER['REQUEST_URI'];
+use App\Helpers\RoutesHelper;
+use Dotenv\Dotenv;
 
-// get request method
-$requestMethod = $_SERVER['REQUEST_METHOD'];
+$dotenv = Dotenv::createImmutable(__DIR__);
+$dotenv->safeLoad();
 
-$route = $routes[$requestMethod][$requestPath];
-$controller = $route[0];
-$method = $route[1];
-$instance = new $controller();
-$instance->$method();
+$routesHelper = new RoutesHelper();
+$routesHelper->handle();
