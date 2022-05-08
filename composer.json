@@ -10,6 +10,11 @@
         "email": "isu3ru@gmail.com"
     }],
     "require": {
-        "myclabs/php-enum": "^1.8"
+        "myclabs/php-enum": "^1.8",
+        "twig/twig": "^3.0",
+        "vlucas/phpdotenv": "^5.4"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^6.0"
     }
 }

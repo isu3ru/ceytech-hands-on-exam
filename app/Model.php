@@ -21,15 +21,6 @@ class Model
         );
     }
 
-    protected function __clone()
-    {
-    }
-
-    public function __wakeup()
-    {
-        throw new \Exception("Cannot unserialize a singleton.");
-    }
-
     /**
      * Return the instance of the model.
      *
