@@ -1,0 +1,15 @@
+{
+    "name": "isuru/hands-on-exam",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "authors": [{
+        "name": "Isuru Ranawaka",
+        "email": "isu3ru@gmail.com"
+    }],
+    "require": {
+        "myclabs/php-enum": "^1.8"
+    }
+}
