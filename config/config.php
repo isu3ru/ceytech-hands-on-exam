@@ -4,5 +4,5 @@
  * SYSTEM CONFIGURATION
  */
 return [
-    'BASE_URL' => 'http://localhost:8000/',
+    'BASE_URL' => $_ENV['BASE_URL'] ?? 'http://localhost:8000',
 ];
