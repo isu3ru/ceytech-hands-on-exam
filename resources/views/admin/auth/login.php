@@ -75,7 +75,7 @@
 <body class="text-center">
 
     <main class="form-signin">
-        <form>
+        <form action="" method="post">
             <h1 class="h3 mb-3 fw-normal">Administrator's Login</h1>
 
             <div class="form-floating">
