@@ -2,8 +2,6 @@
 
 namespace App;
 
-use App\Helpers\ConfigHelper;
-
 class Model
 {
     private static $instances = [];
@@ -12,22 +10,11 @@ class Model
 
     public function __construct()
     {
-        $config = new ConfigHelper();
-
         $this->connection = new \PDO(
-            'mysql:host=' . $config->config('host') . ';dbname=' . $config('database'),
-            $config->config('username'),
-            $config->config('password')
+            'mysql:host=' . $_ENV['DATABASE_HOSTNAME'] . ';dbname=' . $_ENV['DATABASE_NAME'],
+            $_ENV['DATABASE_USERNAME'],
+            $_ENV['DATABASE_PASSWORD']
         );
-    }
-
-    protected function __clone()
-    {
-    }
-
-    public function __wakeup()
-    {
-        throw new \Exception("Cannot unserialize a singleton.");
     }
 
     /**
