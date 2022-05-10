@@ -3,20 +3,17 @@
 namespace App\Controllers;
 
 use App\Helpers\ViewHelper;
+use App\Models\User;
 
 class AdminController
 {
     public function __construct()
     {
     }
+
     public function index()
     {
-        echo 'admin home';
-    }
-
-    public function login()
-    {
-        $title = 'Administrators Login';
-        ViewHelper::render('admin/login', compact('title'));
+        $title = 'Dashboard';
+        ViewHelper::render('admin/dashboard', compact('title'));
     }
 }

@@ -11,7 +11,7 @@ class RoutesHelper
         $this->routes = include CONFIG_PATH . '/routes.php';
     }
 
-    public function show404()
+    private function show404()
     {
         $this->handle(true);
     }
@@ -24,7 +24,8 @@ class RoutesHelper
     public function handle($is404 = false)
     {
         # get request path
-        $requestPath = $_SERVER['REQUEST_URI'];
+        $requestPath = explode('?', $_SERVER['REQUEST_URI'])[0];
+        $queryString = $_SERVER['QUERY_STRING'] ?? '';
 
         // get request method
         $requestMethod = $_SERVER['REQUEST_METHOD'];
@@ -38,6 +39,7 @@ class RoutesHelper
             $route = $this->routes['404'];
         }
 
+        // if not found page is requested, show 404 page
         if ($is404) {
             $route = $this->routes['404'];
         }
@@ -52,7 +54,10 @@ class RoutesHelper
             $instance = new $controller();
             $instance->$method();
         } catch (\Throwable $th) {
-            // shows 404 page
+            // throw the error until logger is implemented
+            throw $th;
+
+            // redirect to show the 404 page
             $this->show404();
         }
     }
