@@ -13,7 +13,7 @@
 
     <meta name="theme-color" content="#7952b3">
 
-    <link href="/assets/css/app.css" rel="stylesheet">
+    <link href="<?php echo App\Helpers\UrlHelper::baseUrl() ?>/assets/css/app.css" rel="stylesheet">
 </head>
 
 <body>

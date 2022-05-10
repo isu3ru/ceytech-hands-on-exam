@@ -4,12 +4,11 @@
 
 This repository contains the files of a php project created for the hands-on exam for ceytech system solutions.
 
-This is a custom-made codebase and does not rely on any framework whatsoever.
+This is a custom-made codebase built from scratch for this project and does not rely on any framework whatsoever.
 
-This does use a few composer packages.
+This does use a few composer packages for special purposes.
 
 - php dotenv
-- php enums
 - symfony var-dumper
 
 ### Author

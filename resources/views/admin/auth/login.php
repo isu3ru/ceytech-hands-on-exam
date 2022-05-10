@@ -73,25 +73,22 @@
 </head>
 
 <body class="text-center">
-
     <main class="form-signin">
-        <form action="" method="post">
+        <?php require_once VIEWS_PATH . '/partials/admin/alerts.php'; ?>
+
+        <form action="<?php echo App\Helpers\UrlHelper::siteUrl('/admin/login') ?>" method="post">
             <h1 class="h3 mb-3 fw-normal">Administrator's Login</h1>
 
             <div class="form-floating">
-                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                <label for="floatingInput">Email address</label>
+                <input type="text" class="form-control" id="username" name="username" placeholder="Your username" autofocus autocomplete="username">
+                <label for="floatingInput">Username</label>
             </div>
+
             <div class="form-floating">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <input type="password" class="form-control" id="password" name="password" placeholder="Your password">
                 <label for="floatingPassword">Password</label>
             </div>
 
-            <div class="checkbox mb-3">
-                <label>
-                    <input type="checkbox" value="remember-me"> Remember me
-                </label>
-            </div>
             <button class="w-100 btn btn-lg btn-primary" type="submit">Log in</button>
             <p class="mt-5 mb-3 text-muted">&copy; <?= date('Y') ?>
                 <br>

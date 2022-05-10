@@ -11,3 +11,6 @@ defined('CONFIG_PATH') or define('CONFIG_PATH', __DIR__ . '/../config');
 
 # defines the public directory path
 defined('PUBLIC_PATH') or define('PUBLIC_PATH', __DIR__ . '/../public');
+
+# set default timezone for date and time functions
+date_default_timezone_set('Asia/Colombo');
