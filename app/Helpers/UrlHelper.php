@@ -56,4 +56,33 @@ class UrlHelper
         header('Location: ' . self::siteUrl($route));
         exit;
     }
+
+    /**
+     * Create slug from text
+     *
+     * @author https://lucidar.me/
+     * @see https://lucidar.me/en/web-dev/how-to-slugify-a-string-in-php/
+     * @param string $url
+     * @return string
+     */
+    public static function slugify(string $urlString)
+    {
+        $text = strip_tags($urlString);
+        $text = preg_replace('~[^\pL\d]+~u', '-', $text);
+        setlocale(LC_ALL, 'en_US.utf8');
+        $text = iconv('utf-8', 'us-ascii//TRANSLIT', $text);
+        $text = preg_replace('~[^-\w]+~', '', $text);
+        $text = trim($text, '-');
+        $text = preg_replace('~-+~', '-', $text);
+        $text = strtolower($text);
+        if (empty($text)) {
+            return 'n-a';
+        }
+        return $text;
+    }
+
+    public static function previousPage()
+    {
+        return $_SERVER['HTTP_REFERER'];
+    }
 }

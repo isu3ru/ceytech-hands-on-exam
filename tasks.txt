@@ -1,2 +1,0 @@
-change bootstrap dir to system,
-add helper function files to that dir
