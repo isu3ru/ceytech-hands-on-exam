@@ -10,6 +10,7 @@ This does use a few composer packages for special purposes.
 
 - php dotenv
 - symfony var-dumper
+- rakit/validation
 
 ### Author
 
