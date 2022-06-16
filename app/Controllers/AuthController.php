@@ -99,7 +99,6 @@ class AuthController
         if ($validation->fails()) {
             // handling errors
             $errors = $validation->errors();
-            dd($errors);
             SessionHelper::populateErrors($errors);
             SessionHelper::populateOldInput($data);
             UrlHelper::redirect('/register');
